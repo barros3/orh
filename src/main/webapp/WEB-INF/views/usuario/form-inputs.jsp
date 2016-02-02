@@ -59,12 +59,12 @@
 					<form:input path="matricula" class="form-control" type="text"></form:input>
 				</div>
 				<div class="form-group col-md-6">
-					<label class="control-label">Data Admissão</label> 
-					<div class="form-group input-group date" id="validaData">
+					<label class="control-label">Data Admissao</label> 
+					<div class="form-group input-group date">
 						<span class="input-group-addon">
 			                    <span class="glyphicon glyphicon-calendar"></span>
 			                </span>
-						<form:input path="dataAdmissao" placeholder="dd/MM/aaaa" type="text" class="form-control"></form:input>
+						<form:input path="dataAdmissao" id="validaData" placeholder="dd/MM/aaaa hh:mm::ss" type="text" class="form-control"></form:input>
 					</div>
 				</div>
 			</div>
@@ -88,3 +88,13 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+        
+        $('#dataAdmissao').datepicker({
+            format: "dd/mm/yyyy hh:mm:ss"
+        });  
+    
+    });
+</script>

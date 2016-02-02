@@ -3,6 +3,7 @@
 <%@attribute name="extraStyles" fragment="true"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:useBean id="dao" class="com.unipe.barros.studio.orh.controllers.UsuarioController"/>
+
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Date/Time Picker for Twitter Bootstrap">
@@ -16,11 +17,12 @@
   <link rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>">
   <link rel="stylesheet" href="<c:url value='/assets/css/bootstrap-theme.min.css'/>">
 
-   <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
-   <link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
-   <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
-   <jsp:invoke fragment="extraStyles"/>
+  <link rel="stylesheet" href="<c:url value='/assets/css/index.css'/>">
+  <link rel="stylesheet" href="<c:url value='/assets/css/forms.css'/>">
+  <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+  <jsp:invoke fragment="extraStyles"/>
 </head>
+
 
 <body>
   
@@ -66,8 +68,8 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Férias <span class="caret"></span></a>
     <ul class="dropdown-menu">
       <li><a href="<c:url value='/aviso/novo-aviso' />">Novo</a></li>
-		 <li><a href="<c:url value='/aviso/list' />">Pesquisar</a></li>
-		 <li><a href="<c:url value='/aviso/list-visu' />">Visualizar</a></li>
+	  <li><a href="<c:url value='/aviso/list' />">Pesquisar</a></li>
+	  <li><a href="<c:url value='/aviso/list-visu' />">Visualizar</a></li>
       <li><a href="#">xxx</a></li>
       <li role="separator" class="divider"></li>
       <li class="dropdown-header">xxx</li>

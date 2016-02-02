@@ -54,8 +54,9 @@ public class Usuario {
 
 	private String cpts;
 
+	@NotEmpty
 	@Temporal(value=TemporalType.TIMESTAMP)
-	@DateTimeFormat(style="dd/MM/yyyy")
+	@DateTimeFormat(style="dd/MM/yyyy hh:mm:ss")
 	private Date dataAdmissao;
 
 	@Enumerated(EnumType.STRING)
