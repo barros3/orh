@@ -35,7 +35,8 @@ public class LoginController {
 
 	@RequestMapping(value = "/autenticar", method = RequestMethod.POST)
 	public String auth(@ModelAttribute Usuario usuario, HttpSession session, ModelMap modelMap) {
-
+		
+		// ERRO 24/02/16 :: ALTERADO DE: USUARIOREPOSITORY PARA USUARIOJPACONSULTA
 		Usuario usuarioAutenticado = usuarioRepository.findByLoginAndSenha(usuario.getLogin(), usuario.getSenha());
 
 		if (!usuarioAutenticado.equals(null) && usuarioAutenticado != null) {

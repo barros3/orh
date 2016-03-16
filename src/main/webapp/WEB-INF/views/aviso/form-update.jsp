@@ -8,7 +8,8 @@
 		<%@include file="form-inputs.jsp"%>
 
 		<div class="form-group col-md-9" style="text-align: right">
-			<button type="submit" class="btn btn-lg btn-success" style="float: right">Confirmar Alteração</button>
+			<button type="submit" class="btn btn-lg btn-success"
+				style="float: right">Confirmar Alteração</button>
 		</div>
 
 	</form:form>

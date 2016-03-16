@@ -1,9 +1,13 @@
 package com.unipe.barros.studio.orh.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -84,5 +88,24 @@ public class AvisoController {
 		}
 		avisoRepository.save(aviso);
 		return new ModelAndView("redirect:/aviso/list");
+	}
+	
+	@RequestMapping(value = "/listPesquisa", method = RequestMethod.GET)
+	public ModelAndView listPesquisa( @Param(value="titulo") String titulo)	{
+		
+		List<Aviso> avisoList = new ArrayList<Aviso>();
+		ModelAndView modelAndView = new ModelAndView("aviso/list");
+		
+		try{
+			if(titulo != ""){			
+				avisoList = avisoRepository.findByTitulo(titulo);
+				return modelAndView.addObject("paginatedList", avisoList);
+			}	
+					
+		}catch(Exception e){
+			e.printStackTrace();
+			modelAndView.addObject("errorAoListar", "Erro ao realizar a buscar, tente novamente!");
+		}
+		return modelAndView;
 	}
 }

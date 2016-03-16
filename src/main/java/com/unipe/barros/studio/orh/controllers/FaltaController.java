@@ -35,13 +35,13 @@ public class FaltaController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/save", method = RequestMethod.GET)
 	public ModelAndView save(@Valid Falta falta, BindingResult bindingResult) {
 		if (bindingResult.hasErrors()) {
 			return form(falta);
 		}
 		faltaRepository.save(falta);
-		return new ModelAndView("redirect:/falta/novo-falta");
+		return new ModelAndView("redirect:/falta/form");
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/load/{id}")
@@ -81,5 +81,12 @@ public class FaltaController {
 		}
 		faltaRepository.save(falta);
 		return new ModelAndView("redirect:/falta/list");
+	}
+	
+	@RequestMapping("/gerencia")
+	public ModelAndView formGerenciaFalta(Falta falta) {
+		ModelAndView modelAndView = new ModelAndView("falta/gerencia-falta");
+		return modelAndView;
+
 	}
 }
