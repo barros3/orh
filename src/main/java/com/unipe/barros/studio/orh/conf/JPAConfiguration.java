@@ -40,10 +40,13 @@ public class JPAConfiguration
    public DataSource dataSource(Environment environment)
    {
       DriverManagerDataSource dataSource = new DriverManagerDataSource();
-      dataSource.setDriverClassName("org.postgresql.Driver");
-      dataSource.setUrl("jdbc:postgresql://localhost/studio22");
-      dataSource.setUsername("postgres");
-      dataSource.setPassword("123");
+      dataSource.setDriverClassName("org.hibernate.dialect.MySQLDialect");
+//      dataSource.setUrl("jdbc:postgresql://localhost/studio22");
+//      dataSource.setUsername("postgres");
+//      dataSource.setPassword("123");
+        dataSource.setUrl("jdbc:mysql://localhost/avaliabus");
+		dataSource.setUsername("root");
+		dataSource.setPassword("");
       return dataSource;
    }
 
@@ -66,7 +69,7 @@ public class JPAConfiguration
       Properties properties = new Properties();
       properties.setProperty("hibernate.hbm2ddl.auto", "update");
       properties.setProperty("hibernate.show_sql", "true");
-      properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect" );
+      properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
       return properties;
    }
 }
